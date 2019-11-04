@@ -4,6 +4,7 @@
   "private": true,
   "description": "Frontend for GitHub feed project",
   "dependencies": {
+    "@loadable/component": "^5.10.3",
     "prop-types": "^15.7.2",
     "react": "^16.11.0",
     "react-dom": "^16.11.0",

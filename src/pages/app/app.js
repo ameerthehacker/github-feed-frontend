@@ -1,14 +1,18 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import AuthRoute from '../../components/auth-route';
-import HomePage from '../home';
-import LoginPage from '../login';
+import loadable from '@loadable/component';
+
+const loadPage = (path) =>
+  loadable(() => import(/* webpackPrefetch: true */ `../${path}`), {
+    fallback: <p>Loading...</p>
+  });
 
 const App = () => (
   <BrowserRouter>
     <Switch>
-      <AuthRoute path={'/'} exact component={HomePage} />
-      <Route path={'/login'} exact component={LoginPage} />
+      <AuthRoute path={'/'} exact component={loadPage('home')} />
+      <Route path={'/login'} exact component={loadPage('login')} />
     </Switch>
   </BrowserRouter>
 );
