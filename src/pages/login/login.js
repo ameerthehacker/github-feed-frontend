@@ -1,11 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Button, Flex, Box } from '@chakra-ui/core';
 
 const LoginPage = () => (
-  <div>
-    <h1>Login Page!</h1>
-    <Link to={'/'}>Home</Link>
-  </div>
+  <Flex justify={'center'} align={'center'} h={'100vh'}>
+    <Box>
+      <h3 className="text-center">Login</h3>
+      <Button size={'lg'} variantColor={'pink'}>
+        Get public feed
+      </Button>
+    </Box>
+  </Flex>
 );
 
 export default LoginPage;
