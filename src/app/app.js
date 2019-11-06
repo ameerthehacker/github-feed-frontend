@@ -5,9 +5,7 @@ import loadable from '@loadable/component';
 import { ThemeProvider } from '@chakra-ui/core';
 
 const loadPage = (path) =>
-  loadable(() => import(/* webpackPrefetch: true */ `../pages/${path}`), {
-    fallback: <p>Loading...</p>
-  });
+  loadable(() => import(/* webpackPrefetch: true */ `../pages/${path}`));
 
 const App = () => (
   <ThemeProvider>
