@@ -1,10 +1,10 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-import AuthRoute from '../../components/auth-route';
+import AuthRoute from '../components/auth-route';
 import loadable from '@loadable/component';
 
 const loadPage = (path) =>
-  loadable(() => import(/* webpackPrefetch: true */ `../${path}`), {
+  loadable(() => import(/* webpackPrefetch: true */ `../pages/${path}`), {
     fallback: <p>Loading...</p>
   });
 
